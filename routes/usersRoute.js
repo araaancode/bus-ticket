@@ -8,7 +8,7 @@ const User = require("../models/userModel")
 
 router.post('/register', async (req, res) => {
     try {
-        let user = await User.findOne({ email: req.body.email })
+        let user = await User.findOne({ phone: req.body.phone })
         if (user) {
             return res.send({
                 message: "کاربر وجود دارد! وارد شوید",
